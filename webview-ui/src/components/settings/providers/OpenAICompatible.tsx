@@ -69,7 +69,7 @@ export const OpenAICompatibleProvider = ({ showModelOptions, isPopup, currentMod
 	return (
 		<div>
 			<DebouncedTextField
-				initialValue={apiConfiguration?.openAiBaseUrl || ""}
+				initialValue={apiConfiguration?.openAiBaseUrl || "https://us-east-a2.ai.ubicloud.com/v1"}
 				onChange={(value) => {
 					handleFieldChange("openAiBaseUrl", value)
 					debouncedRefreshOpenAiModels(value, apiConfiguration?.openAiApiKey)
@@ -90,7 +90,7 @@ export const OpenAICompatibleProvider = ({ showModelOptions, isPopup, currentMod
 			/>
 
 			<DebouncedTextField
-				initialValue={selectedModelId || ""}
+				initialValue={selectedModelId || "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8"}
 				onChange={(value) =>
 					handleModeFieldChange({ plan: "planModeOpenAiModelId", act: "actModeOpenAiModelId" }, value, currentMode)
 				}
